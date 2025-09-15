@@ -1,3 +1,29 @@
 body {
     
 }
+.button {
+  border: dashed, rgb(217, 255, 0);
+  color: rgb(0, 0, 0);
+  padding: 15px 32px;
+  text-align: center;
+  text-decoration: none;
+  display: inline-block;
+  font-size: 20px;
+  margin: 4px 2px;
+  cursor: pointer;
+  background-color: rgb(197, 73, 133);
+ 
+}
+.button2 {
+  border: dashed, rgb(197, 73, 133);
+  color: rgb(74, 11, 77);
+  padding: 15px 32px;
+  text-align: center;
+  text-decoration: none;
+  display: inline-block;
+  font-size: 20px;
+  margin: 4px 2px;
+  cursor: pointer;
+  background-color: rgb(222, 241, 113);
+ 
+}
