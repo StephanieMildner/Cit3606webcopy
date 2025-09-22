@@ -1,4 +1,41 @@
 # template for CIT 3606
 Use this template to make your repo holding all the labs for this class
 
-Change this readme text to your name and class
+Stephanie Mildner Web Programming
+<html>
+<head><h1>Stephanie Mildner Lab Index</h1></head>
+<ul>
+<a href="file:///C:/Users/Student/Documents/GitHub/Cit3606webcopy/LAB%201%20HTML/index.html">LAB 1</href>
+    <br>
+<a href="file:///C:/Users/Student/Documents/GitHub/Cit3606webcopy/LAB%202%20JavaScript%20Intro/index.html">LAB 2</href>
+    <br>
+<a href="LAB 3 Currency Converty UI">LAB 3</href>
+    <br>
+<a href="LAB 4 Landmark Tour">LAB 4</href>
+    <br>
+<a href="LAB 5 Canvas Game">LAB 5</href>
+    <br>
+<a href="LAB 6Python StreamlitL">LAB 6</href>
+    <br>
+<a href="LAB 7 React Pokedex">LAB 7</href>
+    <br>
+<a href="LAB 8 NodeJS Database">LAB 8</href>
+    <br>
+<a href="LAB 9 Fullstack">LAB 9</href>
+
+
+</ul>
+
+
+
+
+
+
+
+
+
+
+
+
+
+</html>
