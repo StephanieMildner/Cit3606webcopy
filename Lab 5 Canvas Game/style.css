@@ -1,3 +1,6 @@
 body {
     
 }
+#myCanvas{
+    background: radial-gradient(circle,rgb(22, 105, 114) 0%, rgba(11, 29, 94, 0.959) 100%)
+}
