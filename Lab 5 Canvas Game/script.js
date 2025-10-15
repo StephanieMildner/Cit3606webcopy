@@ -55,37 +55,36 @@ ctx.drawImage(myimg,x,y,100,100);
 ctx.drawImage(myimg2,x2,y2,100,100);
 ctx.drawImage(myimg3,x3,y3,100,100);
 ctx.drawImage(myimg4,x4,y4,150,150);
-ctx.drawImage(shark1,x5,y5,250,250);
+ctx.drawImage(myimg5,x5,y5,250,250);
 }
                            
-                           
+score = 1                          
 myCanvas.onmousedown = function(e)  
 { if (e.clientX > x && 
         e.clientX < x + 200 &&            
         e.clientY > y && 
         e.clientY < y + 200)  
-        {alert("You clicked the image.")};
+        {alert("You caught a fish! your score is "+ score++)};
     if (e.clientX > x2 && 
         e.clientX < x2 + 200 &&            
         e.clientY > y2 && 
         e.clientY < y2 + 200)  
-        {alert("You clicked the image.")};
+        {alert("You caught a fish! your score is "+ score++)};
     if (e.clientX > x3 && 
         e.clientX < x3 + 200 &&            
         e.clientY > y3 && 
         e.clientY < y3 + 200)  
-        {alert("You clicked the image.")};
-    
+        {alert("You caught a fish! your score is "+ score++)};
     if (e.clientX > x4 && 
         e.clientX < x4 + 300 &&            
         e.clientY > y4 && 
         e.clientY < y4 + 200)  
-        {alert("You clicked the image.")};
+        {alert("Oh No you got a shark! Score: "-score--)};
     if (e.clientX > x5 && 
         e.clientX < x5 + 300 &&            
         e.clientY > y5 && 
         e.clientY < y5 + 300)  
-        {alert("You clicked the image.")};
+        {alert("Oh No you got a shark! Score: "-score--)};
     
     
     }
