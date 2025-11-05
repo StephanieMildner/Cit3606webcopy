@@ -49,7 +49,7 @@ function Pokemon(props){
 </div>
             </div>
     )}
-         
+          
 function App() {
   return (
     <div className="App">
