@@ -8,12 +8,12 @@ import {useState} from "react"
 
 
 function Search(){
-  const[name, setName]=useState("Eevee");
-  const[type, setType]=useState("Normal");
-  const[image, setImage]=useState("eevee.png");
+  const[title, setName]=useState("Sunflowers");
+  const[artistDisplayName, setType]=useState("Vincent Van Gogh");
+  const[image, setImage]=useState("https://images.metmuseum.org/CRDImages/ep/original/DP-41223-001.jpg");
   function changeState(e) {    setName(e.target.value);  } // asgn value
   function clickHandler() {   
- fetch("https://collectionapi.metmuseum.org/public/collection/v1/objects/" + name)
+ fetch("https://collectionapi.metmuseum.org/public/collection/v1/search?q" )
     .then(response => response.json())
     .then(data => {  
       setType(data.types[0].type.name);
@@ -24,17 +24,17 @@ function Search(){
 
   return(
     <div>
-    <label>Choose a Pokemon! 
+    <label>Search for artwork! <br></br>
     <input type="text" onChange={changeState} />
-     <button onClick={clickHandler}>Enter </button>
+     <button onClick={clickHandler}>Search </button>
     </label>
-  <Pokemon name={name} type={type} image={image}/>
+  <artwork title={title} artistDisplayName={artistDisplayName} image={image}/>
     </div>
   );
 }
 
 
-function Pokemon(props){          
+function artwork(props){          
   return(        
   <div>
   <h4>
@@ -43,8 +43,8 @@ function Pokemon(props){
   <div class="card">
   <img src= {props.image} width="80%"/>
   <div class="container">
-    <h4><b>{props.name}</b></h4>
-    <p>Type = {props.type}</p>
+    <h4><b>{props.title}</b></h4>
+    <p>Artist = {props.artistDisplayName}</p>
   </div>
 </div>
             </div>
@@ -55,7 +55,7 @@ function App() {
     <div className="App">
       <header className="App-header">
         <Search/>
-      <Pokemon name="objectIDs" type="Normal" image="eevee.png"/>
+      <artwork title="Sunflowers" artistDisplayName="Vincent Van Gogh" image="https://images.metmuseum.org/CRDImages/ep/original/DP-41223-001.jpg"/>
 
        
        
