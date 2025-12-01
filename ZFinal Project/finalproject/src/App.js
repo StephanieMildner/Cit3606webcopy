@@ -1,4 +1,4 @@
-import logo from './logo.svg';
+
 import './App.css';
 
 
@@ -10,14 +10,30 @@ import {useState} from "react"
 function Search(){
   const[title, setName]=useState("Sunflowers");
   const[artistDisplayName, setType]=useState("Vincent Van Gogh");
-  const[image, setImage]=useState("https://images.metmuseum.org/CRDImages/ep/original/DP-41223-001.jpg");
+  const[image, setImage]=useState("sunflowers.jpg");
+  const[artistDisplayBio, setBio]=useState("Dutch, Zundert 1853–1890 Auvers-sur-Oise");
+  const[objectBeginDate, setDateb]=useState("1887");
+  const[objectEndDate, setDated]=useState("1887");
+  const[medium, setMedium]=useState("Oil on canvas");
   function changeState(e) {    setName(e.target.value);  } // asgn value
   function clickHandler() {   
- fetch("https://collectionapi.metmuseum.org/public/collection/v1/search?q" )
+ fetch("https://collectionapi.metmuseum.org/public/collection/v1/search?q=" + title)
     .then(response => response.json())
     .then(data => {  
-      setType(data.types[0].type.name);
-      setImage(data.sprites.front_default);
+      //setType(data.types[0].type.name);
+      //setImage(data.sprites.front_default);
+      console.log(data);
+      const objectID = data.objectIDs[0];
+      fetch("https://collectionapi.metmuseum.org/public/collection/v1/objects/" + objectID)
+        .then(response => response.json())
+        .then(data => {
+          setType(data.artistDisplayName);
+          setImage(data.primaryImageSmall);
+          setBio(data.artistDisplayBio);
+          setDateb(data.objectBeginDate);
+          setDated(data.objectEndDate);
+          setMedium(data.medium);
+        });
   });
         
   }
@@ -28,13 +44,13 @@ function Search(){
     <input type="text" onChange={changeState} />
      <button onClick={clickHandler}>Search </button>
     </label>
-  <artwork title={title} artistDisplayName={artistDisplayName} image={image}/>
+  <Artwork title={title} artistDisplayName={artistDisplayName} image={image} bio={artistDisplayBio} dateb={objectBeginDate} dated={objectEndDate} medium={medium}/>
     </div>
   );
 }
 
 
-function artwork(props){          
+function Artwork(props){          
   return(        
   <div>
   <h4>
@@ -43,8 +59,12 @@ function artwork(props){
   <div class="card">
   <img src= {props.image} width="80%"/>
   <div class="container">
-    <h4><b>{props.title}</b></h4>
-    <p>Artist = {props.artistDisplayName}</p>
+    <h4><b><p>Title: {props.title}</p></b>
+    <p>Artist: {props.artistDisplayName}</p>
+    <b><p>Artist Bio: {props.bio} </p></b>
+    <b><p>Begin Date: {props.dateb}</p></b>
+    <b><p>End Date: {props.dated}</p></b>
+    <b><p>Artwork Medium: {props.medium}</p></b></h4>
   </div>
 </div>
             </div>
@@ -55,7 +75,7 @@ function App() {
     <div className="App">
       <header className="App-header">
         <Search/>
-      <artwork title="Sunflowers" artistDisplayName="Vincent Van Gogh" image="https://images.metmuseum.org/CRDImages/ep/original/DP-41223-001.jpg"/>
+        
 
        
        
