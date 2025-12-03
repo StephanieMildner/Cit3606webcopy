@@ -39,10 +39,10 @@ function Search(){
   }
 
   return(
-    <div>
-    <label>Search for artwork! <br></br>
-    <input type="text" onChange={changeState} />
-     <button onClick={clickHandler}>Search </button>
+    <div><br></br>
+    <label>Search for Artwork Seen at the Metropolitan Museum! <br></br>
+    <br></br><input type="text" class="searchbutton" onChange={changeState} size="35" />
+     <button class="button" onClick={clickHandler}>Search </button>
     </label>
   <Artwork title={title} artistDisplayName={artistDisplayName} image={image} bio={artistDisplayBio} dateb={objectBeginDate} dated={objectEndDate} medium={medium}/>
     </div>
@@ -54,12 +54,12 @@ function Artwork(props){
   return(        
   <div>
   <h4>
-  Artwork
+  
   </h4>
   <div class="card">
   <img src= {props.image} width="80%"/>
   <div class="container">
-    <h4><b><p>Title: {props.title}</p></b>
+    <h4 class = "h4"><b><p>Title: {props.title}</p></b>
     <p>Artist: {props.artistDisplayName}</p>
     <b><p>Artist Bio: {props.bio} </p></b>
     <b><p>Begin Date: {props.dateb}</p></b>

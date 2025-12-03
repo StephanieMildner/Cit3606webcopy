@@ -37,7 +37,22 @@
   }
 }
 .card{
-  background-color: rgb(184, 155, 155);
+  background-color: rgb(187, 163, 170);
   border: 10px solid #031231;
   padding: 10px;
+}
+.h4{
+  color: #031231;
+}
+.searchbutton{
+  height: 35px;
+  border: 2px solid #031231;
+  border-radius: 5px;
+}
+.button{
+  height: 40px;
+  border: 2px solid #031231;
+  border-radius: 5px;
+  background-color: #ffffff;
+  color: rgb(0, 0, 0);
 }
