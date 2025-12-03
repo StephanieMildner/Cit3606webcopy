@@ -35,6 +35,9 @@ app.use(bodyParser.urlencoded({extended:true}));
 app.get('/newform', function(req, res){
    res.sendFile(__dirname + "/newform.html");
 });
+app.get('/forgotform', function(req, res){
+   res.sendFile(__dirname + "/forgotform.html");
+});
 /*app.post('/submit', function(req, res){
   const sql = 'SELECT * FROM students WHERE lastname = ?';
   console.log("Form contents: " + req.body.lastname);
